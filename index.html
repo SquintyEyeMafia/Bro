@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro visited a memecoin website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Indie Flower', 'Comic Sans MS', cursive, sans-serif;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 3600px; /* Scaled 3x from 1200px */
+            padding: 6rem; /* Scaled 3x from 2rem */
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12rem; /* Scaled 3x from 4rem */
+        }
+
+        .character-img {
+            width: 450px; /* Scaled 3x from 150px */
+            height: auto;
+        }
+
+        .main-text {
+            font-size: 9rem; /* Scaled 3x from 3rem */
+            text-align: center;
+            line-height: 1.4;
+            flex: 1;
+            padding: 0 6rem; /* Scaled 3x from 2rem */
+        }
+
+        .bottom-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            padding-top: 12rem; /* Scaled 3x from 4rem */
+        }
+
+        .enter-text {
+            font-size: 7.5rem; /* Scaled 3x from 2.5rem */
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            letter-spacing: 6px; /* Scaled 3x from 2px */
+        }
+        
+        .small-guy-container {
+            position: absolute;
+            left: 60%; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateX(60px); /* Scaled 3x from 20px */
+        }
+
+        .speech-bubble {
+            font-size: 3.6rem; /* Scaled 3x from 1.2rem */
+            margin-bottom: 1.5rem; /* Scaled 3x from 0.5rem */
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .small-character-img {
+            width: 180px; /* Scaled 3x from 60px */
+            height: auto;
+        }
+
+        /* Responsive adjustments - scaled 3x */
+        @media (max-width: 2304px) { /* Scaled breakpoint? Maybe keeping it standard is better, but contents are huge. I'll just set a large breakpoint */
+            .character-img {
+                width: 300px; /* Scaled 3x from 100px */
+            }
+            .main-text {
+                font-size: 6rem; /* Scaled 3x from 2rem */
+            }
+            .top-section {
+                flex-direction: column;
+                gap: 6rem; /* Scaled 3x from 2rem */
+            }
+            .bottom-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 6rem; /* Scaled 3x from 2rem */
+            }
+            .small-guy-container {
+                position: static;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-section">
+            <img src="images/i1.png" alt="Bro looking right" class="character-img">
+            <div class="main-text">
+                bro visited a<br>
+                memecoin website
+            </div>
+            <img src="images/i2.png" alt="Bro looking left" class="character-img">
+        </div>
+
+        <div class="bottom-section">
+            <a href="info.html" class="enter-text">ENTER</a>
+            <div class="small-guy-container">
+                <div class="speech-bubble">
+                    "bro's about to<br>
+                    click enter"
+                </div>
+                <img src="images/i3.png" alt="Happy bro" class="small-character-img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro Info</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Indie Flower', 'Comic Sans MS', cursive, sans-serif;
+            background-color: white;
+            min-height: 100vh;
+        }
+
+        /* Scroll Arrow */
+        .scroll-arrow {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            font-size: 9rem;
+            cursor: pointer;
+            z-index: 100;
+            user-select: none;
+            transition: transform 0.2s;
+        }
+
+        .scroll-arrow:hover {
+            transform: translateY(10px);
+        }
+
+        /* Section Layout */
+        .full-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 6rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-content {
+            width: 100%;
+            max-width: 3000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12rem;
+            position: relative;
+        }
+
+        /* Hero Styles */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 12rem;
+        }
+
+        .character-head {
+            width: 300px;
+            height: auto;
+        }
+
+        .hero-text {
+            font-size: 9rem;
+            text-align: center;
+        }
+
+        /* Tokenomics Styles */
+        .tokenomics-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 600px;
+        }
+
+        .tokenomics-text-wrapper {
+            z-index: 2;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 6rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2; /* Ensure text is on top */
+        }
+
+        .tokenomics-content {
+            font-size: 4.5rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .character-side {
+            width: 240px;
+            height: auto;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .left-char {
+            left: 10%;
+            bottom: 0;
+        }
+
+        .right-char {
+            right: 10%;
+            top: 0;
+            transform: scaleX(-1);
+        }
+
+        .pump-icon {
+            height: 4.5rem;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        /* Links Styles */
+        .links-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .icon-link {
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .icon-link svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+
+        .alien-char {
+            width: 240px;
+            height: auto;
+            position: absolute;
+            left: 5%; /* Moved further left */
+            top: 0;
+            z-index: 1; /* Behind text */
+        }
+        
+        .ca-text {
+            font-size: 4.5rem;
+            text-align: center;
+            margin-bottom: 6rem;
+            word-break: break-all;
+            max-width: 90%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Comics Styles */
+        .comic-strip {
+            width: 100%;
+            max-width: 1050px; /* Reduced by 30% from 1500px */
+            height: auto;
+        }
+
+        @media (max-width: 2304px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 6rem;
+            }
+            .tokenomics-container {
+                flex-direction: column;
+            }
+            .character-side, .alien-char {
+                position: static;
+                margin: 3rem;
+                transform: none !important;
+            }
+            .right-char {
+                transform: scaleX(-1);
+            }
+            .section-title {
+                font-size: 4.5rem;
+            }
+            .links-container {
+                gap: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Arrow -->
+    <div class="scroll-arrow" onclick="scrollToNextSection()">↓</div>
+
+    <!-- Section 1: Hero -->
+    <section class="full-section">
+        <div class="section-content">
+            <div class="hero-content">
+                <img src="images/i1.png" alt="Bro" class="character-head">
+                <div class="hero-text">bro...</div>
+                <img src="images/i2.png" alt="Bro" class="character-head">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Tokenomics -->
+    <section class="full-section">
+        <div class="section-content">
+            <div class="tokenomics-container">
+                <img src="images/i3.png" alt="Happy Bro" class="character-side right-char">
+                <div class="tokenomics-text-wrapper">
+                    <div class="section-title">bro wants to know the tokenomics...</div>
+                    <div class="tokenomics-content">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                            launched on pump.fun
+                            <img src="images/pump.png" alt="Pump.fun" class="pump-icon">
+                        </div>
+                        Dev Locked & Dex Paid
+                    </div>
+                </div>
+                <img src="images/i3.png" alt="Happy Bro" class="character-side left-char">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Links -->
+    <section class="full-section">
+        <div class="section-content">
+            <div class="tokenomics-container">
+                <img src="images/i9.avif" alt="Alien Bro" class="character-side alien-char">
+                
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <div class="section-title">bro wants the links, bro's a linkmaxxer</div>
+                    <div class="links-container">
+                        <!-- Only X (Twitter) -->
+                        <a href="#" class="icon-link">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="ca-text" style="margin-top: 6rem;">CA: Coming Soon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Comic 1 -->
+    <section class="full-section">
+        <img src="images/i11.avif" alt="Comic Game" class="comic-strip">
+    </section>
+
+    <!-- Section 5: Comic 2 -->
+    <section class="full-section">
+        <img src="images/i12.avif" alt="Comic Visit" class="comic-strip">
+    </section>
+
+    <!-- Section 6: Comic 3 -->
+    <section class="full-section">
+        <img src="images/i13.avif" alt="Comic Skill" class="comic-strip">
+    </section>
+
+    <script>
+        function scrollToNextSection() {
+            const sections = document.querySelectorAll('section');
+            const scrollPos = window.scrollY;
+            
+            for (let i = 0; i < sections.length; i++) {
+                const sectionTop = sections[i].offsetTop;
+                // If section is below current view (with some buffer)
+                if (sectionTop > scrollPos + 50) {
+                    sections[i].scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+            }
+            // Optional: Loop back to top if desired
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
