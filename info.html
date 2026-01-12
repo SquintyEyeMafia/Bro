@@ -181,26 +181,101 @@
         }
 
         @media (max-width: 2304px) {
+            .container {
+                padding: 2rem;
+            }
+            
+            /* Maintain Horizontal Layout - Scale Down */
             .hero-content {
-                flex-direction: column;
-                gap: 6rem;
+                gap: 2rem;
             }
+            .character-head {
+                width: 150px;
+            }
+            .hero-text {
+                font-size: 5rem;
+            }
+
+            /* Tokenomics - Horizontal */
             .tokenomics-container {
-                flex-direction: column;
+                width: 100%;
+                justify-content: space-between;
             }
-            .character-side, .alien-char {
-                position: static;
-                margin: 3rem;
+            .character-side {
+                width: 120px;
+                position: static; /* Make static to participate in flex flow */
+                margin: 0;
                 transform: none !important;
+                z-index: 1;
             }
             .right-char {
-                transform: scaleX(-1);
+                transform: scaleX(-1) !important;
+            }
+            .tokenomics-text-wrapper {
+                flex: 1;
+                padding: 0 1rem;
             }
             .section-title {
-                font-size: 4.5rem;
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            .tokenomics-content {
+                font-size: 2.5rem;
+            }
+            .pump-icon {
+                height: 2.5rem;
+            }
+
+            /* Links - Horizontal */
+            .alien-char {
+                width: 120px;
+                position: static;
+                margin-right: 2rem;
             }
             .links-container {
-                gap: 4.5rem;
+                gap: 3rem;
+            }
+            .icon-link {
+                width: 100px;
+                height: 100px;
+            }
+            .ca-text {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            /* Force Vertical Stacking for Mobile */
+            .hero-content {
+                flex-direction: column;
+                gap: 4rem;
+            }
+            .character-head {
+                width: 250px;
+            }
+            .hero-text {
+                font-size: 7rem;
+            }
+
+            .tokenomics-container {
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+            }
+            .character-side {
+                width: 200px;
+                margin: 2rem 0;
+            }
+            .tokenomics-text-wrapper {
+                padding: 0;
+            }
+            
+            .alien-char {
+                width: 200px;
+                margin: 0 0 2rem 0;
+            }
+            .ca-text {
+                font-size: 3rem;
             }
         }
     </style>
@@ -243,10 +318,11 @@
     <!-- Section 3: Links -->
     <section class="full-section">
         <div class="section-content">
-            <div class="tokenomics-container">
-                <img src="images/i9.avif" alt="Alien Bro" class="character-side alien-char">
+            <div class="tokenomics-container" style="justify-content: center;">
+                <!-- Alien as static flex item for better responsive control -->
+                <img src="images/i9.avif" alt="Alien Bro" class="character-side alien-char" style="position: static; margin-right: 2rem; transform: none;">
                 
-                <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
                     <div class="section-title">bro wants the links, bro's a linkmaxxer</div>
                     <div class="links-container">
                         <!-- Only X (Twitter) -->
